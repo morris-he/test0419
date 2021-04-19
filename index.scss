@@ -1,0 +1,30 @@
+$highlight-color: #F90;
+$main-px:10px;
+
+a{
+  color: $highlight-color;
+}
+h1{
+  font-size: $main-px;
+}
+
+#content{
+  color: #333;
+  article{
+    color: red;
+    h1{
+      a{
+        color: red;
+        &:hover{
+          color: #1b6d85;
+        }
+      }
+    }
+    p{
+      margin-bottom: 1.4em;
+    }
+  }
+  aside{
+    background-color: #EEE
+  }
+}

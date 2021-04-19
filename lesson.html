@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 20px 10px;
+        }
+    </style>
+</head>
+<body>
+<!--我也是！-->
+<div>
+    <h2>我是标题</h2>
+    <p>
+    </p>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script>
+    //取到本地地址，然后用等号拆分成数组，取数组的第2个索引值对应的键值
+    var id = location.href.split('=')[1]
+    console.log(id)
+    $.get('https://www.whphp.com/api/lesson_show',{lesson_id:id},function (data) {
+        console.log(data)
+        $('h2').text(data.title)
+        $('p').append(data.markdown_html_code)
+    },'json')
+
+
+
+    //es6
+    // $.get(`https://www.whphp.com/api/lesson_show/lesson_id/${id}`,function (data) {
+    //     console.log(data)
+    // },'json')
+
+</script>
+</body>
+</html>
